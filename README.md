@@ -1,5 +1,5 @@
 
-# <Nome da aplicação> 	:emoji:
+# Marketing triggered email Application	:incoming_envelope:
 
 ## table of contents
 
@@ -17,14 +17,14 @@
 
  <a href = "#techs"> > Techs </a>
 
- <a href = "#author"> > Author</a>
+ <a href = "#author"> > Authors</a>
 
  <a href = "#license"> > License </a>
 
 <h2 id=about> about </h2>    
 
-Brief explanation about the aplication try to answer the WHY, WHAT, and HOW 
-AND MAIN CHALENGES
+Objective: This project objective is to develop a Marketing triggered email program that allows personalized emails to e sent to a list of clients. 
+The application offers other functions, such as: Mail list, sending emails with pictures attached, and providing detailed reports about the emails sent, including response ratio.
 
 
 <h2 id=logic> Programming logic: </h2>
@@ -38,7 +38,7 @@ Explain in details how to install and run the aplication wiht pictures and code
 
 <h2 id=status> Status </h2>
 
-> status of the aplication
+> Loading...
 
 <h2 id=demo> Demo </h2>
 
@@ -51,7 +51,7 @@ list what technologies i have used
 1. tech    
 2. tech   
 
-<h2 id=author> Author </h2> <!--Padrão não muda-->
+<h2 id=author> Authors </h2> <!--Padrão não muda-->
 
  <a href="https://johnnyalysson.github.io/portifolio-web/">
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/149841185?v=4" width="100px;" alt=""/>

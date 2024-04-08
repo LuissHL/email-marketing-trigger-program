@@ -70,6 +70,12 @@ list what technologies i have used
 [![Linkedin Badge](https://img.shields.io/badge/-Johnny-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/johnnyalysson)](https://www.linkedin.com/in/johnnyalysson) 
 [![Gmail Badge](https://img.shields.io/badge/-johnalysson30@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:johnalysson30@gmail.com)](mailto:johnalysson30@gmail.com)
 
+ <br />
+ 
+<p>Erivelter</p>
+   
+
+
 
 <h2 id=license> License </h2>
 

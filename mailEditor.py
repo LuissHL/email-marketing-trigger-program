@@ -16,7 +16,7 @@ def getBody():
 
 #escolher segmento # coletar da DB
 
-#agendar envio
+#agendar envio #
 
 #previa do email
 

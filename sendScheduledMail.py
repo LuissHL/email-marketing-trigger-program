@@ -1,6 +1,13 @@
+import datetime as dt
+import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+#agendamento em UTC
+send_time = dt.datetime(2024,5,23,13,16,0) # set your sending time in UTC
+time.sleep(send_time.timestamp() - time.time())
+
 
 server_smtp = "smtp.gmail.com"
 port = 587
@@ -8,7 +15,7 @@ sender_email = "luiszzsoul@gmail.com"
 password = "tfus diwe mdej rioe"
 
 #mensagem do email
-receive_email = "vilasboaserivelter@gmail.com"
+receive_email = "johnalysson30@gmail.com"
 subject = "Email automatico em python ahahah"
 body = """
 <!DOCTYPE html>
@@ -58,3 +65,5 @@ except Exception as e:
  print(f"Houve algum erro: {e}")
 finally:
  server.quit()
+
+

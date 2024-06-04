@@ -1,0 +1,5 @@
+/.venv
+*script.txt 
+*john`snote.txt
+/token.json
+/credentials.json

@@ -8,7 +8,7 @@ sender_email = "luiszzsoul@gmail.com"
 password = "tfus diwe mdej rioe"
 
 #mensagem do email
-receive_email = "vilasboaserivelter@gmail.com"
+receive_email = "johnalysson30@gmail.com"
 subject = "Email automatico em python ahahah"
 body = """
 <!DOCTYPE html>

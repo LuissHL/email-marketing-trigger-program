@@ -1,13 +1,7 @@
-import pymysql.cursors
-
+from ListaDeContatos.db_connector import DatabaseConnection
 class data:
     def __init__(self):
-        self.conexao = pymysql.connect(host='localhost',
-                                       user='root',
-                                       password='',
-                                       database='xxxx', #colocar o nome da base de dados
-                                       cursorclass=pymysql.cursors.DictCursor)
-
+        self.conexao = DatabaseConnection.__enter__
 
     def getSegment(self):
         segment = input("Qual segmento?") #input somente para teste, em producao essa info bem do front e precisar catar ela na BD

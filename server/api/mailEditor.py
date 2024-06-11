@@ -1,6 +1,6 @@
 #coletar info para email, será coletado de um json #Imaginar que o email vem em um json(dict) para o backend
 import json
-import runMySQL as Rsql
+import server.api.runMySQL as Rsql
 
 def getSubject():
     openFile = open('emailInfo.json')

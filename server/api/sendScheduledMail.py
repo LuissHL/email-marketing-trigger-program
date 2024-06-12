@@ -16,7 +16,7 @@ password = "tfus diwe mdej rioe"
 
 #mensagem do email
 receive_email = "johnalysson30@gmail.com"
-subject = "Email automatico em python ahahah"
+subject = "Email automatico em python ahahah."
 body = """
 <!DOCTYPE html>
 <html lang="en">

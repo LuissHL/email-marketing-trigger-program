@@ -6,6 +6,8 @@
     text-decoration: none;
     list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: none;
+    border: none;
 }
 
 .d-flex {
@@ -14,7 +16,7 @@
     align-items: center;
 }
 #navBar-left {
-    margin-left: 79px;
+    margin-left: 2rem;
     
 }
 
@@ -24,7 +26,7 @@
     align-items: center;
     background-color: #66B1F2;
     justify-content: space-between;
-    padding: 1%;
+    
 
 }
 
@@ -42,6 +44,7 @@
 #navList {
     gap: 20%;
     margin-right: 40px;
+    padding-right: 1rem;
 }
 
 #btn-seeNotify {
@@ -79,7 +82,7 @@
   #menu {
     display: block;
     position: absolute;
-    width: 100%;
+    
     top: 70px;
     right: 0px;
     background: #e7e7e7;
@@ -101,17 +104,12 @@
   }
   #btn-config {
     display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
     background: none;
     cursor: pointer;
-    gap: 0.5rem;
-  }
-  #btn-config {
-    border-top: 2px solid;
-    width: 20px;
-  }
+}
+    
+  
+  
   #btn-config::after,
   #btn-config::before {
     content: '';

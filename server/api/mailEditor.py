@@ -1,6 +1,6 @@
 #coletar info para email, será coletado de um json #Imaginar que o email vem em um json(dict) para o backend
 import json
-import server.api.runMySQL as Rsql
+from .ListaDeContatos.db_helper import DBHelper
 
 def getSubject():
     openFile = open('emailInfo.json')
@@ -16,10 +16,17 @@ def getBody():
     return email_body
 
 #escolher segmento # coletar da DB
-def getRecipients():
-    recipients= Rsql.data.getSegment() #como esses dados virao do bando de dados?
+def getSegment():
+    connection = DBHelper()
+    getSegment  = connection.execute("SELECT cf.id, cf.Tipo, FROM ClienteFuncionario cf JOIN Email e ON cf.Email_ID = e.id") #CF abreviação para Cliente_funcionario
+    return getSegment
+
+#transforma o segmento em um lista de contatos
+def getRecipients(): 
+    recipients= getSegment() #como esses dados virao do bando de dados?
     return recipients
-   
+
+
 #agendar envio #
 
 
@@ -30,10 +37,6 @@ def getRecipients():
 if __name__ == "__main__":
     print(getSubject())
     print(getBody())
-
-    def getRecipients():
-        recipients= Rsql.data.getSegment()
-        return recipients
 
 
 

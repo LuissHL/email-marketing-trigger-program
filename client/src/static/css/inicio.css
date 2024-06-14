@@ -1,0 +1,110 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: none;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#navBar-left {
+    margin-left: 2rem;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #66B1F2;
+    justify-content: space-between;
+    
+
+}
+
+.emailIcon {
+    width: 70px;
+    height: 70px;
+}
+
+.projectName {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#navList {
+    gap: 20%;
+    margin-right: 40px;
+    padding-right: 1rem;
+}
+
+#btn-seeNotify {
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+    background-color: #66B1F2;
+    cursor: pointer;
+}
+
+  #menu {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #menu a {
+    display: block;
+    padding: 0.5rem;
+  }
+
+
+  #menu {
+    display: block;
+    position: absolute;
+    
+    top: 70px;
+    right: 0px;
+    background: #e7e7e7;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  #btn-config {
+    display: flex;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+    
+.btn-perfil {
+  background: none;
+  border-radius: 50%; width: 43px; height: 42px;
+  cursor: pointer;
+}
+
+ 

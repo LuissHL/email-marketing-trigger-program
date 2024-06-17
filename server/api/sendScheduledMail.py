@@ -3,21 +3,29 @@ import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from mailEditor import getTime,getRecipients,getBody,getSubject,getSegment
 
 #agendamento em UTC
-send_time = dt.datetime(2024,5,23,13,16,0) # set your sending time in UTC
-time.sleep(send_time.timestamp() - time.time())
+scheduled = getTime()
+send_time = dt.datetime(scheduled[0], scheduled[1], scheduled[2], scheduled[3], scheduled[4], scheduled[5]) # set your sending time in UTC
+try:
+    time.sleep(send_time.timestamp() - time.time())
+except:
+    print("resuming sending")
+
 
 
 server_smtp = "smtp.gmail.com"
 port = 587
 sender_email = "luiszzsoul@gmail.com"
 password = "tfus diwe mdej rioe"
+# precisa remover essa senha 
+# Daqui e colocar em um arquivo separado por questão de segurança
 
 #mensagem do email
-receive_email = "johnalysson30@gmail.com"
-subject = "Email automatico em python ahahah."
-body = """
+receive_email = getRecipients()
+subject = f"{getSubject()} test at {dt.datetime.now()} UTC"
+body = '''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +54,7 @@ body = """
     </table>
 </body>
 </html>
-"""
+'''
 
 message = MIMEMultipart()
 message["From"] = sender_email

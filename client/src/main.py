@@ -1,3 +1,26 @@
+from flask import Blueprint
+from . import db
+from flask import Blueprint, render_template
+
+main = Blueprint('main', __name__)
+
+@main.route('/')
+def index():
+    return render_template('inicio.html')
+
+@main.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+
+
+
+
+
+
+"""
+
+
 from flask import Flask, request, jsonify
 from auth import UserCredentials, create_token, authenticate_user, token_required
 
@@ -26,3 +49,4 @@ def login():
 
 if __name__ == '__main__':
     app.run(debug=True)
+"""

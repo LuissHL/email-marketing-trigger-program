@@ -1,110 +1,221 @@
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: none;
 }
 
 .d-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
 #navBar-left {
-    margin-left: 2rem;
-    
+  margin-left: 2rem;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #66B1F2;
-    justify-content: space-between;
-    
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #66B1F2;
+  justify-content: space-between;
 }
 
 .emailIcon {
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 }
 
 .projectName {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 #navList {
-    gap: 20%;
-    margin-right: 40px;
-    padding-right: 1rem;
+  gap: 20%;
+  margin-right: 40px;
+  padding-right: 1rem;
 }
 
 #btn-seeNotify {
-    padding: 5px;
-    border-radius: 50%;
-    border: none;
-    background-color: #66B1F2;
-    cursor: pointer;
-}
-
-  #menu {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  #menu a {
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-  }
-
-  #menu a {
-    display: block;
-    padding: 0.5rem;
-  }
-
-
-  #menu {
-    display: block;
-    position: absolute;
-    
-    top: 70px;
-    right: 0px;
-    background: #e7e7e7;
-    transition: 0.6s;
-    z-index: 1000;
-    height: 0px;
-    visibility: hidden;
-    overflow-y: hidden;
-  }
-  #nav.active #menu {
-    height: calc(100vh - 70px);
-    visibility: visible;
-    overflow-y: auto;
-  }
-  #menu a {
-    padding: 1rem 0;
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-  }
-  #btn-config {
-    display: flex;
-    background: none;
-    cursor: pointer;
-    border: none;
-}
-    
-.btn-perfil {
-  background: none;
-  border-radius: 50%; width: 43px; height: 42px;
+  padding: 5px;
+  border-radius: 50%;
+  border: none;
+  background-color: #66B1F2;
   cursor: pointer;
 }
 
- 
+#menu {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#menu a {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#menu {
+  display: block;
+  position: absolute;  
+  top: 70px;
+  right: 0px;
+  background: #e7e7e7;
+  transition: 0.6s;
+  z-index: 1000;
+  height: 0px;
+  visibility: hidden;
+  overflow-y: hidden;
+}
+
+#nav.active #menu {
+  height: calc(100vh - 120px);
+  visibility: visible;
+  overflow-y: auto;
+}
+
+#menu a {
+  padding: 1rem 0;
+  margin: 0 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+#btn-config {
+  display: flex;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+  
+.btn-perfil {
+background: none;
+border-radius: 50%; width: 43px; height: 42px;
+cursor: pointer;
+}
+
+#person{
+display: block;
+position: absolute;
+top: 70px;
+columns:  2 3;
+transition: 0.6s;
+height: 0px;
+visibility: hidden;
+overflow-y: hidden;
+}
+
+#navPerson.active #person {
+height: calc(100vh - 65%);
+width: calc(100vh - 38%);
+visibility: visible;
+overflow-y: auto;
+}
+
+.absolute   {
+position: absolute;
+}
+
+.-top-2{
+top: -.5rem;
+}
+
+.text-right {
+text-align: center;
+}
+
+.-right-2 {
+right: -.5rem;
+}
+.text-15 {
+font-size: .9375rem;
+line-height: 1.6;
+}
+
+.rounded {
+border-radius: .25rem;
+}
+.w-48   {
+width: 12rem;
+}
+.bg-white {
+background-color: rgb(24, 26, 27);
+}
+
+.z-40 {
+z-index: 40;
+}
+.h5 {
+color: rgb(163, 211, 131);
+}
+.p-4 {
+padding: 1rem;
+}
+
+.h5 {
+font-size: .75rem;
+line-height: 1.6;
+font-weight: var(--font-semibold, 600);
+text-transform: uppercase;
+letter-spacing: .05em;
+--tw-text-opacity: 1;
+}
+
+.py-2 {
+padding-top: .5rem;
+padding-bottom: .5rem;
+}
+
+.border-y {
+border-top-width: 1px;
+border-bottom-width: 1px;
+}
+
+ul {
+list-style-image: initial;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+a.icon-text {
+font-weight: var(--font-semibold, 600);
+}
+
+
+.icon-text {
+display: inline-flex;
+}
+
+a, button {
+transition-duration: .2s;
+}
+a {
+text-decoration: inherit;
+}
+
+a:hover {
+color: aqua;
+}
+
+.icon {
+display: inline-block;
+height: 1em;
+vertical-align: -.125em;
+}
+
+.logout {
+  color: white;
+}
+
+

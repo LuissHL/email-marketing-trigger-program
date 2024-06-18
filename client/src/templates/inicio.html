@@ -1,57 +1,101 @@
-
 <!DOCTYPE html>
-<html lang="Pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
-    <link rel="stylesheet" href="../static/css/inicio.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="../static/css/inicio.css" />
+  </head>
+  <body>
     <header>
-        <div class="container" class="d-flex" >
-            <div class="d-flex" id="navBar-left">
-                <img src="../../../assets/emailIcon.png" class="emailIcon">
-                <p class="projectName">Ferramenta de Disparos</p>
-            </div>
-            
-    <div>
-            <ul class="d-flex" id="navList">
-                <li>
-                 <button id="btn-seeNotify"><img src="../../../assets/sinoIcon.png"></button>
-                </li>
-
-                <li>
-                    <button class="btn-perfil">
-                        <img style="border-radius: 50%; width: 39px; height: 39px;" src="../../../assets/perfilSemFoto.jpg">
-                    </button>
-                </li>
-
-                <li>
-                    <nav id="nav">
-                        <button id="btn-config">
-                            <img style="width: 30px; height: 30px;"  src="../../../assets/barraIcon.png" alt="Button de menu">
-                        </button>
-                    
-                    <ul id="menu">
-                        <li><a href="#">Relatório</a></li>
-                        <li><a href="#">Editor de email</a></li>
-                        <li><a href="#">Lista de contatos</a></li>
-                        <li><a href="#">Agendamento</a></li>
-                        <li><a href="#">Segmentação de contatos</a></li>
-
-                    </ul>
-                    </nav>
-                    
-                </li>
-            </ul>
-    </div>
-          
+      <div class="container d-flex">
+        <div class="d-flex" id="navBar-left">
+          <img src="../../../assets/emailIcon.png" class="emailIcon" />
+          <p class="projectName">Ferramenta de Disparos</p>
         </div>
-    
+
+        <div>
+          <ul class="d-flex" id="navList">
+            <li>
+              <button id="btn-seeNotify">
+                <img src="../../../assets/sinoIcon.png" />
+              </button>
+            </li>
+
+            <li>
+                <nav id="navPerson">
+                    <button class="btn-perfil" aria-label="Abrir infomacoes da conta" id="btn-person" aria-haspopup="true" aria-controls="personal" aria-expanded="false">
+                        <img style="border-radius: 50%; width: 39px; height: 39px" src="../../../assets/perfilSemFoto.jpg" />
+                    </button>
+                    <div id="person" class="absolute -top-2 -right-2 w-48 bg-white rounded shadow-xl z-40 text-right text-15">
+                        <div class="h5 p-4">Usuario</div>
+                        <ul class="border-y py-2">
+                            <li>
+                                <a href="{{ url_for('main.index')}}" class="icon-text">
+                                    <span>Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url_for('main.profile')}}" class="px-4 py-2 icon-text !text-gray-900">
+                                    <span>My Account</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url_for('auth.login')}}" class="icon-text">
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url_for('auth.sighup')}}" class="px-4 py-2 icon-text !text-gray-900">
+                                    <span>Sigh up</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <form action="{{url_for('auth.logout')}}" method="POST">
+                            <input type="hidden" name="_token" />
+                            <button type="submit" class="p-4 icon-text !text-gray-900 hover:!text-primary">
+                                <img src="../../../assets/icons8-sair-30.png" style="width: 30px; height: 30px;" />
+                                <span class="logout">Log Out</span>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </li>
+
+            <li>
+              <nav id="nav">
+                <button id="btn-config" class="btn">
+                  <img
+                    style="width: 30px; height: 30px"
+                    src="../../../assets/barraIcon.png"
+                    alt="Button de menu"
+                  />
+                </button>
+
+                <ul id="menu">
+                  <li><a href="#">Relatório</a></li>
+                  <li><a href="#">Editor de email</a></li>
+                  <li><a href="#">Lista de contatos</a></li>
+                  <li><a href="#">Agendamento</a></li>
+                  <li><a href="#">Segmentação de contatos</a></li>
+                </ul>
+              </nav>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
+    <section>
+      <div class="hero-body">
+
+        <div class="has-text-centered">
+        {% block content %}
+        {% endblock %}
+        </div>
+        </div> 
+    </section>
+
     <script src="../static/js/inicio.js"></script>
-</body>
+  </body>
 </html>

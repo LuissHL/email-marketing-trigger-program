@@ -11,68 +11,74 @@
     
 </head>
 <body>
-    <header>
-        <div class="container" class="d-flex" >
-            <div class="d-flex" id="navBar-left">
-                <img src="../../../assets/emailIcon.png" class="emailIcon">
-                <p class="projectName">Ferramenta de Disparos</p>
-            </div>
-            
-    <div>
-            <ul class="d-flex" id="navList">
-                <li>
-                 <button id="btn-seeNotify"><img src="../../../assets/sinoIcon.png"></button>
-                </li>
 
-                <li>
-                    <button class="btn-perfil">
-                        <img style="border-radius: 50%; width: 39px; height: 39px;" src="../../../assets/perfilSemFoto.jpg">
-                    </button>
-                </li>
-            </ul>
-    </div>
-          
+    {% extends "./inicio.html" %}
+
+{% block content %}
+<header>
+    <div class="container" class="d-flex" >
+        <div class="d-flex" id="navBar-left">
+            <img src="../../../assets/emailIcon.png" class="emailIcon">
+            <p class="projectName">Ferramenta de Disparos</p>
         </div>
-    
-       
-    </header>
+        
+<div>
+        <ul class="d-flex" id="navList">
+            <li>
+             <button id="btn-seeNotify"><img src="../../../assets/sinoIcon.png"></button>
+            </li>
 
-    <section>
-
+            <li>
+                <button class="btn-perfil">
+                    <img style="border-radius: 50%; width: 39px; height: 39px;" src="../../../assets/perfilSemFoto.jpg">
+                </button>
+            </li>
+        </ul>
+</div>
       
+    </div>
 
-        <div class="bodyContent" class="partEntrar">
-            <div class="page-header">
-                <h1><a class="enter"  data-placement="right" title="Clique para abrir esta página no início" href="#" onClick="showWait();">Entrar</a>
-               </h1>
-            </div>
-            
-            <div class="partEntrar">
-                <div>
-                    <div >
-                        <form forceSubmit="true" debug="true" action="" method="post">
-                            <div class="form-group">
-                                <input name="email" id="email" class="form-control" type="text" placeholder="E-mail" />
-                            </div>
-            <div class="form-group">
-                <input name="password" id="password" class="form-control" type="password" placeholder="Senha" />
-            </div>
-           
-            <div class="form-group">
-                <input type="submit" value="Confirmar" class="btn btn-primary" name="submit_default" id="gSubmitButton" data-toggle="tooltip" data-placement="bottom" title="Clique para enviar os dados">
-                &nbsp;
-                
-                <a style="display: flex; align-items: center; gap: 4px;" class="btn btn-default" onClick="togglePassword()">
-                    <img src="../../../assets/mostrarSenha.png" style="width: 20px; height: 20px;"> Mostrar Senha</a>&nbsp;
-            
-                </div>
-            </form>
+   
+</header>
+
+<section>
+
+  
+
+    <div class="bodyContent" class="partEntrar">
+        <div class="page-header">
+            <h1><a class="enter"  data-placement="right" title="Clique para abrir esta página no início" href="#" onClick="showWait();">Entrar</a>
+           </h1>
         </div>
+        
+        <div class="partEntrar">
+            <div>
+                <div >
+                    <form method="POST" action="/login">
+                        <div class="form-group">
+                            <input name="email" id="email" class="form-control" type="text" placeholder="E-mail" />
+                        </div>
+        <div class="form-group">
+            <input name="password" id="password" class="form-control" type="password" placeholder="Senha" />
+        </div>
+       
+        <div class="form-group">
+            <input type="submit" value="Confirmar" class="btn btn-primary" name="submit_default" id="gSubmitButton" data-toggle="tooltip" data-placement="bottom" title="Clique para enviar os dados">
+            &nbsp;
+            
+            <a style="display: flex; align-items: center; gap: 4px;" class="btn btn-default" onClick="togglePassword()">
+                <img src="../../../assets/mostrarSenha.png" style="width: 20px; height: 20px;"> Mostrar Senha</a>&nbsp;
+        
+            </div>
+        </form>
     </div>
 </div>
-            </div>
-        </div>  
-    </section>
+</div>
+        </div>
+    </div>  
+</section>
+{% endblock %}
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../static/js/login.js"></script>

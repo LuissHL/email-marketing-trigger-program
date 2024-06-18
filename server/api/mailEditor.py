@@ -1,6 +1,6 @@
 #coletar info para email, será coletado de um json #Imaginar que o email vem em um json(dict) para o backend
 import json
-from .db_helper import DBHelper
+from ListaDeContatos.db_helper import DBHelper
 
 def getSubject():
     openFile = open('emailInfo.json')

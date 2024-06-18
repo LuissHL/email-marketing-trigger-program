@@ -4,3 +4,5 @@
 /token.json
 /credentials.json
 service_account.json
+passwordSMPT.json
+**__pycache__

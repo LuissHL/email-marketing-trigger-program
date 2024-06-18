@@ -23,13 +23,25 @@ def getSegment():
 
 #transforma o segmento em um lista de contatos
 def getRecipients(): 
-    recipients= getSegment() #como esses dados virao do bando de dados?
+    openFile = open('emailInfo.json')
+    data = json.load(openFile)
+    recipients = str(data["emails"])
+    openFile.close() #como esses dados virao do bando de dados?
     return recipients
 
-
 #agendar envio #
-
-
+def getTime():
+    #may be necessary to fix UTC sending tim 
+    openFile = open('emailInfo.json')
+    data = json.load(openFile)
+    year = int(data["year"])
+    month = int(data["month"])
+    day = int(data["day"])
+    hour = int(data["hour"])
+    minute = int(data["minute"])
+    second = int(data["second"])
+    openFile.close()
+    return year,month,day,hour,minute,second
 
 #previa do email
 

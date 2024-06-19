@@ -162,3 +162,28 @@ h1 {
   border-color: #2669c3;
 }
 
+/* Estilo geral para notificações */
+.notification {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Estilo específico para notificações de erro */
+.notification.is-danger {
+    color: #a94442; /* Cor do texto do erro */
+    background-color: #f2dede; /* Cor de fundo do erro */
+    border-color: #ebccd1; /* Cor da borda do erro */
+}
+
+.notification.is-danger a {
+    color: #a94442; /* Cor do link dentro da notificação */
+    text-decoration: underline;
+}
+
+.notification.is-danger a:hover {
+    color: #843534; /* Cor do link quando o mouse passa por cima */
+}

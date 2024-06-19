@@ -42,9 +42,6 @@
 </header>
 
 <section>
-
-  
-
     <div class="bodyContent" class="partEntrar">
         <div class="page-header">
             <h1><a class="enter"  data-placement="right" title="Clique para abrir esta página no início" href="">Cadastrar</a>
@@ -54,6 +51,13 @@
         <div class="partEntrar">
             <div>
                 <div >
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                       <div class="notification is-danger">
+                         {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+                       </div>
+                    {% endif %}
+                    {% endwith %}
                     <form method="POST" action="/sighup">
                         <div class="form-group">
                             <input name="username" id="username" class="form-control" type="text" placeholder="Digite um nome de usuário" autocomplete="off"/>

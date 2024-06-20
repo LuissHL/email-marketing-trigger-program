@@ -15,36 +15,7 @@
     {% extends "inicio.html" %}
 
 {% block content %}
-<header>
-    <div class="container" class="d-flex" >
-        <div class="d-flex" id="navBar-left">
-            <img src="../../../assets/emailIcon.png" class="emailIcon">
-            <p class="projectName">Ferramenta de Disparos</p>
-        </div>
-        
-<div>
-        <ul class="d-flex" id="navList">
-            <li>
-             <button id="btn-seeNotify"><img src="../../../assets/sinoIcon.png"></button>
-            </li>
-
-            <li>
-                <button class="btn-perfil">
-                    <img style="border-radius: 50%; width: 39px; height: 39px;" src="../../../assets/perfilSemFoto.jpg">
-                </button>
-            </li>
-        </ul>
-</div>
-      
-    </div>
-
-   
-</header>
-
 <section>
-
-  
-
     <div class="bodyContent" class="partEntrar">
         <div class="page-header">
             <h1><a class="enter"  data-placement="right" title="Clique para abrir esta página no início" href="#" onClick="showWait();">Entrar</a>
@@ -74,7 +45,7 @@
             &nbsp;
             
             <a style="display: flex; align-items: center; gap: 4px;" class="btn btn-default" onClick="togglePassword()">
-                <img src="../../../assets/mostrarSenha.png" style="width: 20px; height: 20px;"> Mostrar Senha</a>&nbsp;
+                <img src="{{ url_for('static', filename='assets/mostrarSenha.png') }}" style="width: 20px; height: 20px;"> Mostrar Senha</a>&nbsp;
         
             </div>
         </form>
@@ -84,10 +55,10 @@
         </div>
     </div>  
 </section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/login.js"></script>
 </body>
 </html>

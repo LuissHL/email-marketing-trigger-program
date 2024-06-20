@@ -7,8 +7,10 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def inicio():
-    return render_template('inicio.html')
-
+    if current_user.is_authenticated:
+        return render_template('inicio.html', name=current_user.username)
+    else:
+        return render_template('inicio.html', name="Convidado")
 @main.route('/profile')
 @login_required
 def profile():

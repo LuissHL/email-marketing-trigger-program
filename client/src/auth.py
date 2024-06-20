@@ -9,11 +9,11 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('login.html', name="Convidado")
 
 @auth.route('/signup')
 def signup():
-    return render_template('signup.html')
+    return render_template('signup.html',  name="Convidado")
 
 
 @auth.route('/signup', methods=['POST'])
@@ -64,7 +64,7 @@ def login_post():
             return redirect(url_for('auth.login'))  # se o usuário não existir ou a senha estiver errada, recarregue a página
 
 
-    # if the above check passes, then we know the user has the right credentials
+    # se não passa no if, sabemos que o usuario está com as credenciais certass
       # Aqui passamos os atributos explicitamente para o construtor do User
     user_obj = User(id=user[0],  username=user[1],email=user[2], password=user[3])
     login_user(user_obj, remember=remember)

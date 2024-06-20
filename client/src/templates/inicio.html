@@ -36,11 +36,13 @@
                                 </a>
                             </li>
                             <li>
+                              {% if not current_user.is_authenticated %}
                                 <a href="{{url_for('main.profile')}}" class="px-4 py-2 icon-text !text-gray-900">
                                     <span>My Account</span>
                                 </a>
                             </li>
                             <li>
+                              {% if not current_user.is_authenticated %}
                                 <a href="{{url_for('auth.login')}}" class="icon-text">
                                     <span>Login</span>
                                 </a>

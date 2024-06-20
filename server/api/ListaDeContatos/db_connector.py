@@ -25,9 +25,9 @@ class DatabaseConnection:
         ]
 #O Config é o acesso para o banco de dados varia de cada um, mais o xamp tem um padrão que esse.
 config = {
-    'user': 'root',  # Nome de usuário padrão do MySQL no XAMPP
-    'password': '',  # Senha vazia por padrão no XAMPP
-    'host': 'localhost',  # Host padrão no XAMPP
-    'database': 'appemail',  # Nome do banco de dados
-    'raise_on_warnings': True  # Opção para levantar exceções em caso de alertas
+    'host':'127.0.0.1',
+    'port':3306,
+    'user':'root',
+    'password':'',
+    'database':'disparoDeEmail',
 }

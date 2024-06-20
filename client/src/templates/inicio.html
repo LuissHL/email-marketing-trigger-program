@@ -31,15 +31,16 @@
                         <div class="h5 p-4">Usuario</div>
                         <ul class="border-y py-2">
                             <li>
-                                <a href="{{ url_for('main.index')}}" class="icon-text">
+                                <a href="{{ url_for('main.inicio')}}" class="icon-text">
                                     <span>Home</span>
                                 </a>
                             </li>
                             <li>
-                              {% if not current_user.is_authenticated %}
+                              {% if current_user.is_authenticated %}
                                 <a href="{{url_for('main.profile')}}" class="px-4 py-2 icon-text !text-gray-900">
                                     <span>My Account</span>
                                 </a>
+                                {% endif %}
                             </li>
                             <li>
                               {% if not current_user.is_authenticated %}
@@ -48,18 +49,22 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url_for('auth.sighup')}}" class="px-4 py-2 icon-text !text-gray-900">
-                                    <span>Sigh up</span>
+                                <a href="{{url_for('auth.signup')}}" class="px-4 py-2 icon-text !text-gray-900">
+                                    <span>Sign up</span>
                                 </a>
+                                {% endif %}
                             </li>
                         </ul>
-                        <form action="{{url_for('auth.logout')}}" method="POST">
-                            <input type="hidden" name="_token" />
+                        {% if current_user.is_authenticated %}
                             <button type="submit" class="p-4 icon-text !text-gray-900 hover:!text-primary">
                                 <img src="../../../assets/icons8-sair-30.png" style="width: 30px; height: 30px;" />
-                                <span class="logout">Log Out</span>
+                                <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                  Logout
+                              </a>
                             </button>
                         </form>
+                        {% endif %}
+
                     </div>
                 </nav>
             </li>

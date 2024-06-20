@@ -34,9 +34,12 @@ def sighup_post():
       return redirect(url_for('auth.signup')) 
 
      # cria um novo usuário com os dados do formulário. Hash a senha para que a versão em texto simples não seja salva.
-    hashed_password = generate_password_hash(password, method='sha256')
-    cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)", (username, email, hashed_password))
-    connection.commit()
+    hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+    with DatabaseConnection(config) as connection:
+        cursor = connection.cursor()
+        cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)", (username, email, hashed_password))
+        connection.commit()
+        flash('User successfully created!')
 
     return redirect(url_for('auth.login'))
 
@@ -62,9 +65,11 @@ def login_post():
 
 
     # if the above check passes, then we know the user has the right credentials
-    login_user(User(*user), remember=remember)
-    return redirect(url_for('main.profile'))
+      # Aqui passamos os atributos explicitamente para o construtor do User
+    user_obj = User(id=user[0],  username=user[1],email=user[2], password=user[3])
+    login_user(user_obj, remember=remember)
 
+    return redirect(url_for('main.profile'))
 
 @auth.route('/logout')
 @login_required

@@ -1,12 +1,11 @@
 from flask import Flask
 from flask_login import LoginManager
-from server.api.ListaDeContatos.db_connector import DatabaseConnection, config
+from server.api.ListaDeContatos.db_connector import DatabaseConnection
 
 def create_app():
     app = Flask(__name__)
 
-    app.config['SECRET_KEY'] = 'infinity'
-    app.config['SQLALCHEMY_DATABASE_URI'] = config
+    app.config.from_object('config')
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -17,7 +16,14 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
         # como user_id é a chave primaria da nossa tabela, usamos isso pra pesquisar o usuario existente no banco 
-        return User.get_by_id(user_id)
+        config = app.config['DATABASE_CONFIG']
+        with DatabaseConnection(config) as connection:
+            cursor = connection.cursor()
+            cursor.execute("SELECT id, username, email, password FROM users WHERE id = %s", (user_id,))
+            result = cursor.fetchone()
+            if result:
+                return User(*result)
+            return None
     
     # blueprint for auth routes in our app
     from .auth import auth as auth_blueprint

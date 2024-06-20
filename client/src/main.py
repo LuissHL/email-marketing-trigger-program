@@ -6,7 +6,7 @@ from flask_login import login_required, current_user
 main = Blueprint('main', __name__)
 
 @main.route('/')
-def index():
+def inicio():
     return render_template('inicio.html')
 
 @main.route('/profile')

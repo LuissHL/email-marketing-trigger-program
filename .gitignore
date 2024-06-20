@@ -6,3 +6,4 @@
 service_account.json
 passwordSMPT.json
 **__pycache__
+config.py

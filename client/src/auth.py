@@ -15,15 +15,8 @@ def login():
 def signup():
     return render_template('signup.html')
 
-@auth.route('/logout')
-def logout():
-    return 'Logout'
-    
-@auth.route('/sighup', methods=['POST'])
-def sighup():
-        # code to validate and add user to database goes here
-        return redirect(url_for('auth.login'))
-@auth.route('/sighup', methods=['POST'])
+
+@auth.route('/signup', methods=['POST'])
 def sighup_post():
     email = request.form.get('email')
     username = request.form.get('username')
@@ -38,7 +31,7 @@ def sighup_post():
 
     if user: # if a user is found, we want to redirect back to signup page so user can try again
       flash('Email address already exists')
-      return redirect(url_for('auth.sighup')) 
+      return redirect(url_for('auth.signup')) 
 
      # cria um novo usuário com os dados do formulário. Hash a senha para que a versão em texto simples não seja salva.
     hashed_password = generate_password_hash(password, method='sha256')

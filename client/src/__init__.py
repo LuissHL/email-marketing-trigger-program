@@ -5,7 +5,7 @@ from server.api.ListaDeContatos.db_connector import DatabaseConnection
 def create_app():
     app = Flask(__name__)
 
-    app.config.from_object('config')
+    app.config.from_pyfile('../../config.py')
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'

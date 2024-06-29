@@ -16,6 +16,11 @@ def inicio():
 def profile():
     return render_template('profile.html', name=current_user.username)
 
+#criação inicial colocar autenticação
+@main.route('/agendamento')
+def agendamento():
+    return render_template('scheduled.html',name= 'teste')
+
 
 
 

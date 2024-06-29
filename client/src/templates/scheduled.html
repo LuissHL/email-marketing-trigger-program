@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/scheduled.css">
+</head>
+<body>
+    <!-- scheduled.html -->
+{% extends "inicio.html" %}
+
+{% block content %}
+<div class="crm-table-container">
+  <table class="crm-table">
+      <thead>
+          <tr>
+              <th>Título</th>
+              <th>Data Agendada</th>
+              <th>Segmento</th>
+              <th>Status</th>
+          </tr>
+      </thead>
+      <tbody>
+        <!-- conteudo principal será adicionado aqui visualização baseado em dados do banco de dados -->
+      </tbody>
+  </table>
+</div>
+<div class="crm-actions">
+  <button class="crm-button add-button">Adicionar <span class="plus-icon">+</span></button>
+  <button class="crm-button edit-button">Editar <span class="edit-icon">✎</span></button>
+  <button class="crm-button remove-button">Remover <span class="trash-icon">🗑</span></button>
+</div>
+{% endblock %}
+</body>
+</html>

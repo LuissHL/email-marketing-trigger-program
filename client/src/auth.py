@@ -65,11 +65,12 @@ def login_post():
 
 
     # se não passa no if, sabemos que o usuario está com as credenciais certass
-      # Aqui passamos os atributos explicitamente para o construtor do User
+    # Aqui passamos os atributos explicitamente para o construtor do User
     user_obj = User(id=user[0],  username=user[1],email=user[2], password=user[3])
     login_user(user_obj, remember=remember)
 
     return redirect(url_for('main.profile'))
+
 
 @auth.route('/logout')
 @login_required

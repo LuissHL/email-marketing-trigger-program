@@ -19,8 +19,7 @@ server_smtp = "smtp.gmail.com"
 port = 587
 sender_email = "luiszzsoul@gmail.com"
 password = "tfus diwe mdej rioe"
-# precisa remover essa senha 
-# Daqui e colocar em um arquivo separado por questão de segurança
+# precisa remover essa senha Daqui e colocar em um arquivo separado por questão de segurança
 
 #mensagem do email
 receive_email = getRecipients()

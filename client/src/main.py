@@ -16,9 +16,13 @@ def inicio():
 def profile():
     return render_template('profile.html', name=current_user.username)
 
+@main.route('/email')
+def email():
+    return render_template('emailEditor.html')
 
-
-
+@main.route('/agendamentos')
+def agendar():
+    return render_template('agendamento.html')
 
 
 

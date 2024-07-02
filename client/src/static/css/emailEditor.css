@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+.container-email {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3%;
+}
+.Box {
+    background-color: #ffffff;
+    border-color: #20252c;
+}
+
+.Box {
+    border-radius: 0.375rem;
+    border-style: solid;
+    border-width: max(1px, 0.0625rem);
+}
+
+.FormControl-input{
+    height: 2.5rem;
+    width: 100%;
+    min-width: 46rem;
+    padding-block: 0.625rem;
+    padding-inline: 0.75rem;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+.mb-3 {
+    margin-bottom: 16px !important;
+}
+.mb-2 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.form-control {
+    border: 1px solid #20252c;
+    border-radius: 6px;
+}
+.f4 {
+    margin-right: 36rem;
+}
+.optionsButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #010409;
+    margin-top: 10px;
+    margin-left: 40rem;
+    padding: 10px;
+    width: 100%;
+    min-width: 6rem;
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.CommentBox-header {
+    display: flex;
+    background-color: #e7ecf0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.CommentBox-input {
+    display: block;
+    width: 100%;
+    min-height: 102px;
+    padding: 0.5rem;
+    line-height: 1.5;
+    resize: vertical;
+    background: none;
+}
+.CommentBox-container {
+    display: block;
+    width: calc(100% - 0.5rem, 8px* 2);
+    height: 100%;
+    margin: 0.5rem;
+    overflow: hidden;
+    border-radius: 0.375rem;
+}
+
+.CommentBox-input.CommentBox-input--large {
+    min-height: 250px;
+}
+
+.tabnav {
+    border-bottom: max(1px, 0.0625rem) solid;
+}
+
+.CommentBox-header .tabnav-tabs {
+    margin-top: -1px;
+    margin-left: -1px;
+    flex-shrink: 0;
+}
+.tabnav-tabs {
+    display: flex;
+    margin-bottom: calc(max(1px, 0.0625rem)* -1);
+}
+.tabnav-tab[aria-selected=true] {
+    background-color: white;
+    border-color: #20252c;
+    border-radius: 0.375rem;
+    color: #010409;
+}
+.tabnav-tab.selected{
+    background-color: black;
+    border-color: black;
+    border-radius: 20%;
+    color: black;
+}
+
+.tabnav-tab {
+    background-color: initial;
+    border: max(1px, 0.0625rem) solid #0000;
+    border-bottom: 0;
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    line-height: 23px;
+    padding: 0.5rem 1rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    transition: color .2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+.btn-link {
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+}
+.tabnav-tab:focus, .tabnav-tab:focus-visible {
+    border-radius: 0.375rem 0.375rem 0 0 !important;
+}
+
+
+.gap-1 {
+    gap: 4px!important;
+}
+.d-flex {
+    display: flex !important;
+}
+.flex-items-center {
+    align-items: center !important;
+}
+.flex-justify-end {
+    justify-content: flex-end !important;
+}
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+.width-full {
+    width: 100%;
+}
+.ActionBar {
+    margin-top: 10px;
+    align-items: center;
+    box-sizing: initial;
+    display: flex !important;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: flex-end;
+    min-width: calc(2rem* 3);
+    overflow: hidden;
+    position: relative;
+}
+.ActionBar-item-container {
+     box-sizing: initial; 
+    height: 2rem;
+    overflow: hidden;
+}
+.ActionBar-item {
+    float: left;
+    position: relative;
+}
+
+.Button--iconOnly {
+    display: inline-grid;
+    padding: unset;
+    place-content: center;
+    width: 2rem;
+}
+
+.Button {
+    align-items: center;
+    background-color: initial;
+    border: black solid;
+    border-color: #0000;
+    border-radius: black;
+    color: black;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: bold;
+    gap: 12px;
+    height: 5px;
+    justify-content: space-between;
+    min-width: max-content;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+    transition: 80ms cubic-bezier(0.65,0,0.35,1);
+    transition-property: color, fill, background-color, border-color;
+    user-select: none;
+}
+
+.pl-2 {
+    padding-left: 16px !important;
+}
+
+.pb-2 {
+    padding-bottom: 16px !important;
+}
+.pr-2 {
+    padding-right: 16px !important;
+}
+
+.Button-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

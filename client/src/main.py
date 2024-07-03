@@ -18,9 +18,9 @@ def profile():
 
 #criação inicial colocar autenticação
 @main.route('/agendamento')
-# @login_required
+@login_required
 def agendamento():
-    return render_template('scheduled.html',name= current_user.usernam)
+    return render_template('scheduled.html',name= current_user.username)
 
 
 

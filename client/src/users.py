@@ -14,9 +14,9 @@ users: dict[int, dict[str, str]] = {
 }
 
 def get_users_by_username(username: str)-> dict | None:
-   id = user = None
-   for current_id, current_user in users.items():
-      if current_user.get('username') == username:
-         id, user = current_id, current_user
-         break
-   return id, user
+    id = user = None
+    for current_id, current_user in users.items():
+        if current_user.get('username') == username:
+            id, user = current_id, current_user
+            break
+    return id, user

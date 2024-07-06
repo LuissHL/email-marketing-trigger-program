@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="../static/css/scheduled.css">
+</head>
+<body>
+    <!-- scheduled.html -->
+{% extends "inicio.html" %}
+
+{% block content %}
+<div class="crm-table-container">
+  <table class="crm-table">
+      <thead>
+          <tr>
+              <th>Título</th>
+              <th>Data Agendada</th>
+              <th>Segmento</th>
+              <th>Status</th>
+          </tr>
+      </thead>
+      <tbody>
+        <!---TROCAR dbinfo POR INFORMAÇão DA BASE DE DADOS, querry --> 
+        <!---OU --> 
+        <!---Carregar base da dados previamente como dicionario python e chamar as elementos do dicionario --> 
+        {%for i in dbinfo%} 
+        <td>{{dbinfo['titulo']}}</td>
+        <td>{{dbinfo['agendada']}}</td>
+        <td>{{dbinfo['segmento']}}</td>
+        <td>{{dbinfo['status']}}</td>
+        {%endfor%}
+      </tbody>
+  </table>
+</div>
+<div class="crm-actions">
+  <!-- Essas ações adicionam ao banco de dados, confirmar com os boys como meljhor fazer isso, python ou JS -->
+  <button onclick="addSchedule()" class="crm-button add-button">Adicionar <span class="plus-icon">+</span></button>
+  <button onclick="editSchedule()" class="crm-button edit-button">Editar <span class="edit-icon">✎</span></button>
+  <button onclick="removeSchedule()" class="crm-button remove-button">Remover <span class="trash-icon">🗑</span></button>
+</div>
+<script src="../static/js/agendamento.js"></script>
+{% endblock %}
+</body>
+</html>

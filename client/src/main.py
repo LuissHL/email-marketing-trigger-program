@@ -2,7 +2,6 @@ from flask import Blueprint
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 
-
 main = Blueprint('main', __name__)
 
 @main.route('/')
@@ -24,12 +23,6 @@ def email():
 @login_required
 def agendamento():
     return render_template('scheduled.html',name= current_user.username)
-
-
-@main.route('/agendamentos')
-def agendar():
-    return render_template('agendamento.html')
-
 
 
 """

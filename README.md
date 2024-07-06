@@ -1,3 +1,6 @@
+# Descrição
+
+O projeto "Email Marketing Trigger Program" é uma aplicação colaborativa, ideal para profissionais e empresas que desejam otimizar suas campanhas de email marketing. Este programa permite o envio de emails personalizados para uma lista de clientes, além de fornecer uma série de funcionalidades avançadas para a gestão e análise das campanhas.
 
 # Marketing triggered email Application	
 Project with Mysql to save customers and Flask to create routes and connect to each page

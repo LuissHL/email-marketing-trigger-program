@@ -33,6 +33,17 @@ if (btnPerson) {
   btnPerson.addEventListener('touchstart', togglePersonal);
 }
 
+window.addEventListener('scroll', function() {
+  let navbar = document.getElementsByClassName('main-nav')[0]; // Pegue o primeiro elemento com a classe 'main-nav'
+  if (navbar) {
+    navbar.classList.add('has-scroll'); // Adicione a classe 'has-scroll'
+  } else {
+    navbar.removeClass('has-scroll'); 
+  }
+});
+
+
+
 ////////////// codigo antigo ///////////////////////////////
 
 // const btnMobile = document.getElementById('btn-config');

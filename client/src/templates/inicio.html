@@ -6,9 +6,9 @@
     <title>Email marketing</title>
     <link rel="stylesheet" href="../static/css/inicio.css" />
   </head>
-  <body>
-    <header>
-      <div class="container d-flex">
+  <body class="page-email" itemscope itemtype="http://schema.org/WebPage" >
+    <nav class="main-nav js-main-nav main-nav--new">
+      <div class="main-nav d-flex">
         <div class="d-flex" id="navBar-left">
           <img src="{{ url_for('static', filename='assets/emailIcon.png') }}" class="emailIcon" />
           <p class="projectName">Ferramenta de Disparos</p>
@@ -23,7 +23,7 @@
             </li>
 
             <li>
-                <nav id="navPerson">
+                <div id="navPerson">
                     <button class="btn-perfil" aria-label="Abrir infomacoes da conta" id="btn-person" aria-haspopup="true" aria-controls="personal" aria-expanded="false">
                         <img style="border-radius: 50%; width: 39px; height: 39px" src="{{ url_for('static', filename='assets/perfilSemFoto.jpg') }}" />
                     </button>
@@ -65,11 +65,11 @@
                         {% endif %}
 
                     </div>
-                </nav>
+                  </div>
             </li>
 
             <li>
-              <nav id="nav">
+              <div id="nav">
                 <button id="btn-config" class="btn">
                   <img
                     style="width: 30px; height: 30px"
@@ -85,13 +85,98 @@
                   <li><a href="{{ url_for('main.agendamento') }}">Agendamento</a></li>
                   <li><a href="#">Segmentação de contatos</a></li>
                 </ul>
-              </nav>
+              </div>
             </li>
           </ul>
         </div>
       </div>
-    </header>
+    </nav>
+    <header >
+     <div class="header-content">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="hero-title">Email em massa</h1>
+                <div class="hero-lead spacing-bottom-lg">Aproveite um serviço de e-mail marketing de uso fácil e acessível para impulsionar o crescimento da receita do usuário. Com suporte de segunda a sexta em horário comercial.</div>
+                <div class="block-group-btn spacing-bottom-lg justify-content-center justify-content-lg-start">
+                    <a class="btn btn--red btn-xlg btn-signup" href="javascript:void(0);">
+                        Testar gratuitamente                        </a>
+                                                <a href="https://accounts.google.com/o/oauth2/auth?client_id=813215804672-rfnk4t8lt0cn7nfi0fdv69sg3esh22jq.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Flogin.sendpulse.com%2Flogin%2Fsocial%2Fprovider%2Fgoogle&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&amp;response_type=code&amp;display=popup" class="btn btn-xlg btn-social btn--google m-0 js-reg-social-google" title="Logue com o Google">
+                            <svg class="btn__icon align-middle" width="16" height="16">
+                                <use xlink:href="/templates/sendpulsev1/img/svg-icons/sprite-social-icons-db.svg#icon-google"></use>
+                            </svg>
+                            <span class="align-middle">
+                                    Logue com o Google                                    </span>
+                        </a>
+                                        </div>
+                <div class="header-content__info d-sm-flex">
+                    <p>Até 15.000 e-mails mensais gratuitos</p>
+                    <i class="bi bi-dot d-none d-sm-block"></i>
+                    <p>Não é necessário cartão de crédito</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="header-img d-none d-lg-block">
+                    <div>
+                        <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 991px)">
+                        <img class="js-nolazy" src="//www.spcdn.org/images/email/email-en/Frame_1193-2.png" alt="E-mail marketing">
+                    </div>
 
+                    <picture class="fly-icon">
+                        <source srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" media="(max-width: 991px)">
+                        <img class="js-nolazy" src="//www.spcdn.org/templates/sendpulsev1/img/sp_icons/sp_feature_icons/ic-f-mail.svg">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     </div>
+    </header>
+<main>
+  <section class="section-create-first-email section-spacing-md pb-0">
+    <div class="container">
+        <h2 class="section-create-first-email__title section-title-h3 text-center">Como enviar emails em massa?</h2>
+        <div class="section-lead text-center">Coloque em prática as suas estratégias de e-mail marketing com a SendPulse</div>
+
+        <div class="how-works clearfix">
+            <div class="how-works__item how-works__item--counter list-categories-block js-show-way">
+                <img class="how-works__item-img rounded-circle spacing-bottom-lg js-nolazy" src="//www.spcdn.org/images/email/add_recipients.svg" alt="Aumente sua lista de endereçamento">
+                <h3 class="benefit-title how-works__item-title">Aumente sua lista de endereçamento</h3>
+                <div class="how-works__item-descr text-muted"><p>Colete seus contatos usando formulários de inscrição ou use uma lista de endereçamento já existente. Faça o upload de um arquivo com endereços de e-mail, insira-os manualmente ou importe sua lista de endereçamento a partir de outro serviço de e-mail em massa.
+</p></div>
+            </div>
+
+            <div class="how-works__item how-works__item--counter list-categories-block">
+                <img class="how-works__item-img rounded-circle spacing-bottom-lg js-nolazy" src="//www.spcdn.org/images/email/create_letter.svg" alt="Crie um modelo de marca exclusivo">
+                <h3 class="benefit-title how-works__item-title">Crie um modelo de marca exclusivo</h3>
+                <div class="how-works__item-descr text-muted"><p>Use <a href="/br/features/email/draganddropeditor">nosso criador</a> prático e intuitivo de modelos de arrastar e soltar ou selecione um dos nossos mais de 130 modelos de e-mail. Você pode personalizar seus e-mails e adicionar textos, imagens, botões, vídeos e links de redes sociais. </p>
+<p>
+Seus e-mails serão adaptáveis a todos os tamanhos de tela: você pode verificar como eles serão visualizados usando a nossa visualização de desktop e dispositivo móvel.
+</p></div>
+            </div>
+
+            <div class="how-works__item how-works__item--counter list-categories-block">
+                <img class="how-works__item-img rounded-circle spacing-bottom-lg js-nolazy" src="//www.spcdn.org/images/email/send_newsletter.svg" alt="Lance suas campanhas de e-mail">
+                <h3 class="benefit-title how-works__item-title">Lance suas campanhas de e-mail</h3>
+                <div class="how-works__item-descr text-muted"><p>Use o <a href="/br/features/email/checker">verificador de spam integrado da SendPulse</a> para enviar e-mails em massa sem ser colocado na lista negra e melhorar a capacidade de entrega de e-mails.</p>
+<p>
+Siga nossas recomendações e clique em Iniciar para enviar sua campanha.
+</p></div>
+            </div>
+
+            <div class="how-works__item how-works__item--counter list-categories-block">
+                <img class="how-works__item-img rounded-circle spacing-bottom-lg js-nolazy" src="//www.spcdn.org/images/email/analyze_results.svg" alt="Analise seus resultados">
+                <h3 class="benefit-title how-works__item-title">Analise seus resultados</h3>
+                <div class="how-works__item-descr text-muted"><p>Você pode melhorar sua estratégia de <a href="/br/features/email/analytics">email marketing analisando</a> os resultados de sua campanha anterior.</p>
+<p>
+Você também pode rastrear seu tráfego de e-mail e taxas de conversão usando ferramentas de análise, como o Google Analytics.
+</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
     <section>
       <div class="hero-body">
 
@@ -101,6 +186,7 @@
         </div>
         </div> 
     </section>
+  
 
     <script src="../static/js/inicio.js"></script>
   </body>

@@ -6,22 +6,212 @@
   list-style: none;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+body {
+  margin: 0;
+  position: relative;
+  background-color: #fff;
+  font-family: "Onest", "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  line-height: 1.42857;
+}
+@media (min-width: 992px) {
+  .page-email .header-content {
+      padding-top: 195px;
+      padding-bottom: 95px;
+  }
+  .page-email .header {
+      min-height: 780px;
+      overflow: hidden;
+  }
+}
+
+.page-email .header-content {
+  background: radial-gradient(22.4% 45.45% at 55.91% 89.19%, rgba(119, 56, 237, .3) 0, rgba(119, 56, 237, 0) 100%), linear-gradient(98.39deg, #48cb9d 0, #5f91ed 96.14%);
+}
+
+.main-nav {
+  padding-top: 0;
+  position: fixed;
+  width: 100%;
+  box-shadow: 12px 9px 50px 0 rgba(0, 0, 0, .05);
+  z-index: 999;
+  transition: background-color .3s ease, top .3s ease, padding-top .3s linear;
+}
+
+.main-nav.has-scroll {
+  background: #fff; /* Garante que o fundo permanece branco ao rolar */
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-height: unset;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-height: unset;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+@media (min-width: 992px) {
+  .col-lg-6 {
+      flex: 0 0 auto;
+      width: 50%;
+  }}
+  .spacing-bottom-lg {
+    margin-bottom: 30px;
+}
+
+.hero-lead {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 40px;
+}
+@media (min-width: 992px) {
+  .justify-content-center {
+      display: flex;
+      flex-direction: row;
+  }
+}
+.row>* {
+  flex-shrink: 0;
+
+  max-width: 100%;
+  padding-right: calc(30px* .5);
+  padding-left: calc(30px* .5);
+  margin-top: 0px;
+}
+
+.block-group-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .justify-content-lg-start {
+      justify-content: flex-start !important;
+  }}
+  .btn-signup {
+    white-space: nowrap;
+}
+.hero-title {
+  color: #ffff;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.btn--red, .btn-accent, .btn-red {
+    background-color: #f65858;
+    background-image: none;
+    color: #fff;
+    border: 1px solid transparent;
+}
+.btn-xlg {
+    padding: 16px 28px;
+    font-size: 18px;
+    line-height: 1.3333333;
+}
+.btn-lg, .btn-xlg {
+    font-weight: 600;
+}
+.btn {
+    text-align: center;
+    border-radius: 8px;
+}
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
 
 .d-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+.btn--google {
+  background: #fff;
+  color: #000;
+  border: 1px solid #d6e3e3;
+  box-shadow: 0 2px 2px rgba(69, 80, 84, .12);
+}
 
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 250px;
+  margin-bottom: 10px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+}
+.m-0 {
+  margin: 0 !important;
+}
+@media (min-width: 576px) {
+  .d-sm-flex {
+      display: flex !important;
+  }}
+  @media (min-width: 576px) {
+    .d-sm-block {
+        display: block !important;
+    }}
+    .page-email .header .header-img>div img {
+      max-width: 940px;
+  }
+  
+  
+  img {
+      height: auto;
+      box-sizing: content-box;
+  }
+  img {
+      vertical-align: middle;
+      
+  }
+  .page-email .header .header-img .fly-icon {
+    top: -4.8%;
+    left: 25%;
+}
+
+.page-email .fly-icon {
+    position: absolute;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 14px 10px 32px rgba(121, 142, 152, .2);
+}
+@media (min-width: 992px) {
+  .page-email .hero-title, .page-email .page-support .header h1, .page-support .header .page-email h1 {
+      font-size: 48px;
+  }}
 #navBar-left {
   margin-left: 2rem;
 }
 
-.container {
+.main-nav {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  background-color: #66b1f2;
   justify-content: space-between;
 }
 
@@ -229,7 +419,9 @@ a {
   color: blue;
   text-decoration: inherit;
 }
-
-a:hover {
-  color: aqua;
+.text-center {
+  text-align: center !important;
+}
+.section-spacing-md {
+  padding-top: 140px;
 }

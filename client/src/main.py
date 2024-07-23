@@ -17,8 +17,8 @@ def profile():
 
 @main.route('/email')
 def email():
-    return render_template('emailEditor.html')
-
+    return render_template('emailEditor.html', name= current_user.username)
+#criação inicial colocar autenticação
 @main.route('/agendamento')
 @login_required
 def agendamento():

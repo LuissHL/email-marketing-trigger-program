@@ -6,101 +6,93 @@
     <title>Email marketing</title>
     <link rel="stylesheet" href="../static/css/inicio.css" />
   </head>
-  <body>
-    <header>
-      <div class="container d-flex">
-        <div class="d-flex" id="navBar-left">
-          <img src="{{ url_for('static', filename='assets/emailIcon.png') }}" class="emailIcon" />
-          <p class="projectName">Ferramenta de Disparos</p>
-        </div>
+  <body class="page-email" itemscope >
 
-        <div>
-          <ul class="d-flex" id="navList">
-            <li>
-              <button id="btn-seeNotify">
-                <img src="{{ url_for('static', filename='assets/sinoIcon.png') }}" />
-              </button>
-            </li>
+    {% include 'navbar.html' %}
 
-            <li>
-                <nav id="navPerson">
-                    <button class="btn-perfil" aria-label="Abrir infomacoes da conta" id="btn-person" aria-haspopup="true" aria-controls="personal" aria-expanded="false">
-                        <img style="border-radius: 50%; width: 39px; height: 39px" src="{{ url_for('static', filename='assets/perfilSemFoto.jpg') }}" />
-                    </button>
-                    <div id="person" class="absolute -top-2 -right-2 w-48 bg-white rounded shadow-xl z-40 text-right text-15">
-                        <div class="h5 p-4">{{name}}</div>
-                        <ul class="border-y py-2">
-                            <li>
-                                <a href="{{ url_for('main.inicio') }}" class="py-2 icon-text">
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                              {% if current_user.is_authenticated %}
-                                <a href="{{url_for('main.profile')}}" class="py-2 icon-text">
-                                    <span>My Account</span>
-                                </a>
-                                {% endif %}
-                            </li>
-                            <li>
-                              {% if not current_user.is_authenticated %}
-                                <a href="{{url_for('auth.login')}}" class="py-2 icon-text">
-                                    <span>Login</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url_for('auth.signup')}}" class="py-2 icon-text">
-                                    <span>Sign up</span>
-                                </a>
-                                {% endif %}
-                            </li>
-                        </ul>
-                        {% if current_user.is_authenticated %}
-                            <button type="submit" id="p-1" class="py-2 icon-text">
-                                <img src="{{ url_for('static', filename='assets/icons8-sair-30.png') }}" style="width: 30px; height: 30px;" />
-                                <a href="{{ url_for('auth.logout') }}" class="navbar-item">
-                                  Logout
-                              </a>
-                            </button>
-                        {% endif %}
+    {% block content %}
 
-                    </div>
-                </nav>
-            </li>
+    <header >
+     <div class="header-content">
+      <div class="container">
+        <div class="container-style text-center">
+            <h1 class="hero-title">Email em massa</h1>
+            <div class="hero-lead spacing-bottom-lg">Aproveite um serviço de e-mail marketing de uso fácil e acessível para impulsionar o crescimento da receita do usuário. Com suporte de segunda a sexta em horário comercial.</div>
+            <div class="block-group-btn spacing-bottom-lg justify-content-center">
+                <a class="btn btn--red btn-xlg btn-signup" href="#">
+                    Testar gratuitamente
+                </a>
+                <a href="#" class="btn btn-xlg btn-social btn--google m-0" title="Logue com o Google">
+                  <img src="https://www.vectorlogo.zone/logos/google/google-icon.svg" style="width:16px; height:16px ;padding-right:5px">
+                  <span class="align-middle">Logue com o Google</span>
+                </a>
+            </div>
 
-            <li>
-              <nav id="nav">
-                <button id="btn-config" class="btn">
-                  <img
-                    style="width: 30px; height: 30px"
-                    src="{{ url_for('static', filename='assets/barraIcon.png') }}"
-                    alt="Button de menu"
-                  />
-                </button>
+            <div class="d-sm-flex">
+                <p>Até 15.000 e-mails mensais gratuitos!</p>
+              
+                <p>Não é necessário cartão de crédito</p>
+            </div>
 
-                <ul id="menu">
-                  <li><a href="#">Relatório</a></li>
-                  <li><a href="{{ url_for('main.email') }}">Editor de email</a></li>
-                  <li><a href="#">Lista de contatos</a></li>
-                  <li><a href="{{ url_for('main.agendamento') }}">Agendamento</a></li>
-                  <li><a href="#">Segmentação de contatos</a></li>
-                </ul>
-              </nav>
-            </li>
-          </ul>
-        </div>
-      </div>
+            </div>
+            </div>
+    </div>
+    </div>
+     </div>
     </header>
 
-    <section>
-      <div class="hero-body">
 
-        <div class="has-text-centered">
-        {% block content %}
-        {% endblock %}
+<main>
+  <section class="section-spacing-md pb-0">
+    <div class="section-content">
+        <h2 class="section-title-h3 text-center">Como enviar emails em massa?</h2>
+        <div class="section-lead text-center">Coloque em prática as suas estratégias de e-mail marketing com a SendPulse</div>
+    </div>
+        <div class="how-works">
+            <div>
+                <img class="rounded-circle spacing-bottom-lg" src="//www.spcdn.org/images/email/add_recipients.svg" alt="Aumente sua lista de endereçamento">
+                <h3>Aumente sua lista de endereçamento</h3>
+                <div class="text-muted"><p>Colete seus contatos usando formulários de inscrição ou use uma lista de endereçamento já existente. Faça o upload de um arquivo com endereços de e-mail, insira-os manualmente ou importe sua lista de endereçamento a partir de outro serviço de e-mail em massa.
+
+                </p>
+
+              </div>
+            </div>
+
+            <div>
+                <img class="rounded-circle spacing-bottom-lg" src="//www.spcdn.org/images/email/create_letter.svg" alt="Crie um modelo de marca exclusivo">
+                <h3>Crie um modelo de marca exclusivo</h3>
+                <div class="text-muted"><p>Use <a href="#">nosso criador</a> prático e intuitivo de modelos de arrastar e soltar ou selecione um dos nossos mais de 130 modelos de e-mail. Você pode personalizar seus e-mails e adicionar textos, imagens, botões, vídeos e links de redes sociais. </p>
+<p>
+Seus e-mails serão adaptáveis a todos os tamanhos de tela: você pode verificar como eles serão visualizados usando a nossa visualização de desktop e dispositivo móvel.
+</p></div>
+            </div>
+
+            <div>
+                <img class="rounded-circle spacing-bottom-lg" src="//www.spcdn.org/images/email/send_newsletter.svg" alt="Lance suas campanhas de e-mail">
+                <h3>Lance suas campanhas de e-mail</h3>
+                <div class="text-muted"><p>Use o <a href="#">verificador de spam integrado do nosso app</a> para enviar e-mails em massa sem ser colocado na lista negra e melhorar a capacidade de entrega de e-mails.</p>
+<p>
+Siga nossas recomendações e clique em Iniciar para enviar sua campanha.
+</p></div>
+            </div>
+
+            <div>
+                <img class="rounded-circle spacing-bottom-lg" src="//www.spcdn.org/images/email/analyze_results.svg" alt="Analise seus resultados">
+                <h3>Analise seus resultados</h3>
+                <div class="text-muted"><p>Você pode melhorar sua estratégia de <a href="#">email marketing analisando</a> os resultados de sua campanha anterior.</p>
+<p>
+Você também pode rastrear seu tráfego de e-mail e taxas de conversão usando ferramentas de análise, como o Google Analytics.
+</p></div>
+            </div>
         </div>
-        </div> 
-    </section>
+    </div>
+</section>
+</main>
+
+{% endblock %}
+
+  
 
     <script src="../static/js/inicio.js"></script>
   </body>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email marketing</title>
+    <link rel="stylesheet" href="../static/css/navbar.css" />
+  </head>
+  <body>
+<nav class="main-nav">
+    <div class="main-nav d-flex">
+      <div class="d-flex" id="navBar-left">
+        <img src="{{ url_for('static', filename='assets/emailIcon.png') }}" class="emailIcon" />
+        <p class="projectName">Ferramenta de Disparos</p>
+      </div>
+
+      <div>
+        <ul class="d-flex" id="navList">
+          <li>
+            <button id="btn-seeNotify">
+              <img src="{{ url_for('static', filename='assets/sinoIcon.png') }}" />
+            </button>
+          </li>
+
+          <li>
+              <div id="navPerson">
+                  <button class="btn-perfil" aria-label="Abrir infomacoes da conta" id="btn-person" aria-haspopup="true" aria-controls="personal" aria-expanded="false">
+                      <img style="border-radius: 50%; width: 39px; height: 39px" src="{{ url_for('static', filename='assets/perfilSemFoto.jpg') }}" />
+                  </button>
+                  <div id="person" class="absolute -top-2 -right-2 w-48 bg-white rounded shadow-xl z-40 text-right text-15">
+                      <div class="h5 p-4">{{name}}</div>
+                      <ul class="border-y py-2">
+                          <li>
+                              <a href="{{ url_for('main.inicio') }}" class="py-2 icon-text">
+                                  <span>Home</span>
+                              </a>
+                          </li>
+                          <li>
+                            {% if current_user.is_authenticated %}
+                              <a href="{{url_for('main.profile')}}" class="py-2 icon-text">
+                                  <span>My Account</span>
+                              </a>
+                              {% endif %}
+                          </li>
+                          <li>
+                            {% if not current_user.is_authenticated %}
+                              <a href="{{url_for('auth.login')}}" class="py-2 icon-text">
+                                  <span>Login</span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{url_for('auth.signup')}}" class="py-2 icon-text">
+                                  <span>Sign up</span>
+                              </a>
+                              {% endif %}
+                          </li>
+                      </ul>
+                      {% if current_user.is_authenticated %}
+                          <button type="submit" id="p-1" class="py-2 icon-text">
+                              <img src="{{ url_for('static', filename='assets/icons8-sair-30.png') }}" style="width: 30px; height: 30px;" />
+                              <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                          </button>
+                      {% endif %}
+
+                  </div>
+                </div>
+          </li>
+
+          <li>
+            <div id="nav">
+              <button id="btn-config" class="btn">
+                <img
+                  style="width: 30px; height: 30px"
+                  src="{{ url_for('static', filename='assets/barraIcon.png') }}"
+                  alt="Button de menu"
+                />
+              </button>
+
+              <ul id="menu">
+                <li><a href="#">Relatório</a></li>
+                <li><a href="{{ url_for('main.email') }}">Editor de email</a></li>
+                <li><a href="#">Lista de contatos</a></li>
+                <li><a href="{{ url_for('main.agendamento') }}">Agendamento</a></li>
+                <li><a href="#">Segmentação de contatos</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <script src="../static/js/inicio.js"></script>
+</body>
+</html>

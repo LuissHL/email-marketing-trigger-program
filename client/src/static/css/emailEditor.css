@@ -1,235 +1,196 @@
-* {
-    box-sizing: border-box;
-}
-.container-email {
+.container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 3%;
-}
-.Box {
-    background-color: #ffffff;
-    border-color: #20252c;
+    justify-content: center;
+    margin-top: 4%;
+    
 }
 
-.Box {
-    border-radius: 0.375rem;
-    border-style: solid;
-    border-width: max(1px, 0.0625rem);
+.container-content {
+  width: 100%;
+  max-width: 55rem;
+  height: 100%;
+  min-height: 32rem;
+  border-radius: 3px;
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, .14), 0px 3px 14px 2px rgba(0, 0, 0, .12), 0px 5px 5px -3px rgba(0, 0, 0, .2);
+
 }
 
-.FormControl-input{
-    height: 2.5rem;
-    width: 100%;
-    min-width: 46rem;
-    padding-block: 0.625rem;
-    padding-inline: 0.75rem;
-}
-
-.p-0 {
-    padding: 0 !important;
-}
-.mb-3 {
-    margin-bottom: 16px !important;
-}
-.mb-2 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-
-.form-control {
-    border: 1px solid #20252c;
-    border-radius: 6px;
-}
-.f4 {
-    margin-right: 36rem;
-}
-.optionsButtons {
+.toolbar {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: flex-end;
-}
+    color: #041e49;
+    background: #f2f6fc;  
+    letter-spacing: normal;
+    font-weight: 700;
+    height: auto;
+    padding: 10px 16px; /* Ajustando padding para cima e para baixo e esquerda e direita */
 
-.btn-primary {
-    color: #ffffff;
-    background-color: #010409;
-    margin-top: 10px;
-    margin-left: 40rem;
-    padding: 10px;
-    width: 100%;
-    min-width: 6rem;
 }
-
-.btn {
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 20px;
-}
-
-.CommentBox-header {
-    display: flex;
-    background-color: #e7ecf0;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-.CommentBox-input {
-    display: block;
-    width: 100%;
-    min-height: 102px;
-    padding: 0.5rem;
-    line-height: 1.5;
-    resize: vertical;
+.btn-screen {
+    border: none;
+    padding: 0;
     background: none;
 }
-.CommentBox-container {
-    display: block;
-    width: calc(100% - 0.5rem, 8px* 2);
-    height: 100%;
-    margin: 0.5rem;
-    overflow: hidden;
-    border-radius: 0.375rem;
+.img-tools {
+    padding-right: 7px;
+    width: 15px;
+    height: 15px;
 }
 
-.CommentBox-input.CommentBox-input--large {
-    min-height: 250px;
+.sendEmail {
+    padding: 0 16px;
 }
-
-.tabnav {
-    border-bottom: max(1px, 0.0625rem) solid;
-}
-
-.CommentBox-header .tabnav-tabs {
-    margin-top: -1px;
-    margin-left: -1px;
-    flex-shrink: 0;
-}
-.tabnav-tabs {
+.sender {
     display: flex;
-    margin-bottom: calc(max(1px, 0.0625rem)* -1);
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
 }
-.tabnav-tab[aria-selected=true] {
-    background-color: white;
-    border-color: #20252c;
-    border-radius: 0.375rem;
-    color: #010409;
-}
-.tabnav-tab.selected{
-    background-color: black;
-    border-color: black;
-    border-radius: 20%;
-    color: black;
-}
-
-.tabnav-tab {
-    background-color: initial;
-    border: max(1px, 0.0625rem) solid #0000;
-    border-bottom: 0;
-    display: inline-block;
-    flex-shrink: 0;
-    font-size: 0.875rem;
-    line-height: 23px;
-    padding: 0.5rem 1rem;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    transition: color .2s cubic-bezier(0.3, 0, 0.5, 1);
-}
-.btn-link {
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-}
-.tabnav-tab:focus, .tabnav-tab:focus-visible {
-    border-radius: 0.375rem 0.375rem 0 0 !important;
-}
-
-
-.gap-1 {
-    gap: 4px!important;
-}
-.d-flex {
-    display: flex !important;
-}
-.flex-items-center {
-    align-items: center !important;
-}
-.flex-justify-end {
-    justify-content: flex-end !important;
-}
-.flex-wrap {
-    flex-wrap: wrap !important;
-}
-
-.width-full {
+#toPersonInput {
     width: 100%;
+    min-width: 15rem;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid black;
+    padding: 10px;
 }
-.ActionBar {
-    margin-top: 10px;
-    align-items: center;
-    box-sizing: initial;
-    display: flex !important;
-    flex-grow: 1;
-    flex-shrink: 1;
-    justify-content: flex-end;
-    min-width: calc(2rem* 3);
-    overflow: hidden;
-    position: relative;
+#toPersonInput:focus {
+    outline: none;
 }
-.ActionBar-item-container {
-     box-sizing: initial; 
-    height: 2rem;
-    overflow: hidden;
-}
-.ActionBar-item {
-    float: left;
-    position: relative;
+.bodyEmail {
+    border-radius: 1px;
+    box-sizing: border-box;
+    display: none;
+    transition: none;
+    margin: 16px;
 }
 
-.Button--iconOnly {
-    display: inline-grid;
-    padding: unset;
-    place-content: center;
-    width: 2rem;
+.textEmail:focus {
+    outline: none;
+    border: none;
 }
 
-.Button {
-    align-items: center;
-    background-color: initial;
-    border: black solid;
-    border-color: #0000;
-    border-radius: black;
-    color: black;
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: row;
-    font-size: 12px;
-    font-weight: bold;
-    gap: 12px;
-    height: 5px;
-    justify-content: space-between;
-    min-width: max-content;
-    padding: 0 12px;
-    position: relative;
-    text-align: center;
-    transition: 80ms cubic-bezier(0.65,0,0.35,1);
-    transition-property: color, fill, background-color, border-color;
-    user-select: none;
-}
-
-.pl-2 {
-    padding-left: 16px !important;
-}
-
-.pb-2 {
-    padding-bottom: 16px !important;
-}
-.pr-2 {
-    padding-right: 16px !important;
-}
-
-.Button-content {
+.toolsForEdit {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 9px;
+    height: 32px;
+    padding: 12px 0 16px;
+}
+
+.btn-send  {
+    background-color: #0b57d0;
+    padding: 10px;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 1px black solid;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+.sendOrScheduleOption {
+    display: flex;
+    flex-direction: row;
+    background-color: #0b57d0;
+    border-radius: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 6rem;
+    margin-left: 50px;
+}
+.sendOrScheduleOption:hover {
+    box-shadow: 0 1px 2px 0 rgba(26, 115, 232, 0.451), 0 1px 3px 1px rgba(26, 115, 232, 0.302);
+    outline: 1px solid transparent;
+    border: none;
+    background-color: #1b61d1;
+}
+
+.hG>.dropdown-icon {
+    background-image: url(https://www.gstatic.com/images/icons/material/system_gm/1x/arrow_drop_down_white_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: none;
+    height: 20px;
+    margin: 0 0 0 auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 20px;
+    margin: 0 0 0 9px;
+}
+#seta-rotate {
+    transition: transform 0.5s ease;
+}
+
+.hG:hover {
+    opacity: 0.50;
+}
+
+.personalizingEmail {
+    display: inline-flex;
+     align-items: center; 
+     height: 36px;
+      background: white; 
+      overflow: hidden; 
+      font-size: 14px; 
+      line-height: 1.2; 
+      border-radius: 8px; 
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 16px 24px 0px, rgba(0, 0, 0, 0.1) 0px 2px 6px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; 
+      pointer-events: auto;
+     padding: 4px;
+}
+
+.dv {
+    display: flex;
+      gap: 9px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.aaA.eY {
+    background-image: url(https://www.gstatic.com/images/icons/material/system_gm/1x/format_size_black_20dp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+
+.aaA {
+    height: 21px;
+    width: 21px;
+    vertical-align: middle;
+    opacity: .71;
+    margin: 2px 0;
+}
+.og {
+    background-image: url(https://cdn-icons-png.flaticon.com/512/64/64022.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    opacity: 1;
+    display: inline-block;
+    height: 20px;
+    margin: 17px;
+    padding: 0;
+    transition: opacity 0.15s cubic-bezier(0.4,0,0.2,1);
+    width: 15px;
+    margin-left: auto;
+}
+.og:hover {
+    opacity: 0.50;
 }

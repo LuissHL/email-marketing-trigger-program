@@ -1,3 +1,5 @@
+# To install set a virtual enviroment and put on the  shell:
+# pip install -r requirements
 Flask
 PyJWT
 pydantic

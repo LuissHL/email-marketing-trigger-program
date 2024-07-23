@@ -1,19 +1,16 @@
+document.getElementById('attachFileIcon').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+});
 
+let btn = document.getElementById('seta-rotate')
+let isRotated = false;
 
+function rotateButton() {
+    if(isRotated){
+    btn.style.transform = 'rotate(0deg)'
+    } else {
+        btn.style.transform = 'rotate(180deg)'
+    }
 
-function previewText() {
-    let preview = document.getElementById('btn-preview')
-    preview.ariaSelected = true
-
-    let write = document.getElementById('btn-write')
-    write.ariaSelected = false
-}
-
-function writeText() {
-    let write = document.getElementById('btn-write')
-    write.ariaSelected = true
-
-
-    let preview = document.getElementById('btn-preview')
-    preview.ariaSelected = false
+    isRotated = !isRotated
 }

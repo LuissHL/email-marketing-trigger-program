@@ -1,6 +1,7 @@
 from db_connector import DatabaseConnection, config
 
-class DBHelper():
+
+class DBHelper:
     def __init__(self):
         self.connection = None
 
@@ -8,11 +9,11 @@ class DBHelper():
         with DatabaseConnection(config) as connection:
             cursor = connection.cursor()
             cursor.execute(sql)
-            if sql.split()[0].upper() =='SELECT':
-                result = list()          
+            if sql.split()[0].upper() == "SELECT":
+                result = list()
                 for row in cursor.fetchall():
                     result.append(row)
-                connection.commit() # APLICAR ALTERAÇÕES (SALVAR)
+                connection.commit()  # APLICAR ALTERAÇÕES (SALVAR)
                 cursor.close()
                 return result
             else:

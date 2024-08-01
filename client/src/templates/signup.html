@@ -12,21 +12,16 @@
 </head>
 <body>
 
-    {% extends "./inicio.html" %}
+    {% include "navbar.html" %}
 
 {% block content %}
 
 
 <section>
     <div class="bodyContent" class="partEntrar">
-        <div class="page-header">
-            <h1><a class="enter"  data-placement="right" title="Clique para abrir esta página no início" href="">Cadastrar</a>
-           </h1>
-        </div>
-        
         <div class="partEntrar">
-            <div>
-                <div >
+                    <h1><a class="page-header enter" title="Clique para abrir esta página no início" href="">Cadastrar</a>
+                    </h1>
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
                        <div class="notification is-danger">
@@ -42,17 +37,14 @@
                             <input name="email" id="email" class="form-control" type="text" placeholder="Digite seu E-mail" />
                         </div>
         <div class="form-group">
-            <input name="password" id="password" class="form-control" placeholder="Crie uma Senha" />
+            <input name="password" id="password" class="form-control" placeholder="Crie uma Senha" autocomplete="off"/>
         </div>
        
         <div class="form-group">
-            <input type="submit" value="Cadastrar" class="btn btn-primary" name="submit_default" id="gSubmitButton" data-toggle="tooltip" data-placement="bottom" title="Clique para enviar os dados">
+            <input type="submit" value="Cadastrar" class="btn btn-primary" name="submit_default" id="gSubmitButton" title="Clique para enviar os dados">
             &nbsp; 
             </div>
         </form>
-    </div>
-</div>
-</div>
         </div>
     </div>  
 </section>

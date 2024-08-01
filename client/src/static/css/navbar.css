@@ -179,8 +179,8 @@
     padding: 5px;
     border-radius: 50%;
     border: none;
-    background-color: #66b1f2;
     cursor: pointer;
+    background: none;
   }
   
   #menu {
@@ -215,7 +215,6 @@
   #nav.active #menu {
     height: calc(100vh - 170px);
     visibility: visible;
-    overflow-y: auto;
   }
   
   #menu a {
@@ -254,7 +253,6 @@
     height: calc(100vh - 75%);
     width: calc(100vh - 38%);
     visibility: visible;
-    overflow-y: auto;
   }
   
   .absolute {
@@ -361,10 +359,4 @@
   a {
     color: blue;
     text-decoration: inherit;
-  }
-  .text-center {
-    text-align: center !important;
-  }
-  .section-spacing-md {
-    padding-top: 140px;
   }

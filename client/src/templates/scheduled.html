@@ -12,7 +12,8 @@
 
 {% block content %}
 <div class="crm-table-container">
-  <table class="crm-table">
+  <div class="crm-table-content">
+    <table class="crm-table">
       <thead>
           <tr>
               <th>Título</th>
@@ -33,13 +34,17 @@
         {%endfor%}
       </tbody>
   </table>
+
+  <div class="crm-actions">
+    <!-- Essas ações adicionam ao banco de dados, confirmar com os boys como meljhor fazer isso, python ou JS -->
+    <button onclick="addSchedule()" class="crm-button add-button">Adicionar <span class="plus-icon">+</span></button>
+    <button onclick="editSchedule()" class="crm-button edit-button">Editar <span class="edit-icon">✎</span></button>
+    <button onclick="removeSchedule()" class="crm-button remove-button">Remover <span class="trash-icon">🗑</span></button>
+  </div>
+  </div>
+ 
 </div>
-<div class="crm-actions">
-  <!-- Essas ações adicionam ao banco de dados, confirmar com os boys como meljhor fazer isso, python ou JS -->
-  <button onclick="addSchedule()" class="crm-button add-button">Adicionar <span class="plus-icon">+</span></button>
-  <button onclick="editSchedule()" class="crm-button edit-button">Editar <span class="edit-icon">✎</span></button>
-  <button onclick="removeSchedule()" class="crm-button remove-button">Remover <span class="trash-icon">🗑</span></button>
-</div>
+
 <script src="../static/js/agendamento.js"></script>
 {% endblock %}
 </body>

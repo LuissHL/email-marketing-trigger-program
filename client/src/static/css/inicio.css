@@ -14,7 +14,6 @@
   background: radial-gradient(22.4% 45.45% at 55.91% 89.19%, rgba(119, 56, 237, .3) 0, rgba(119, 56, 237, 0) 100%), linear-gradient(98.39deg, #48cb9d 0, #5f91ed 96.14%);
 }
 
-
 .main-nav {
   padding-top: 0;
   position: fixed;
@@ -37,6 +36,10 @@
 
 }
 
+.container-style {
+  animation: fadeUp 2s normal;
+
+}
 @media (min-width: 992px) {
   .col-lg-6 {
       flex: 0 0 auto;
@@ -178,112 +181,6 @@
       font-family: "Onest", "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }}
 
-
-.main-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-
-
-
-.absolute {
-  position: absolute;
-}
-
-.-top-2 {
-  top: -0.5rem;
-}
-
-.text-right {
-  text-align: center;
-}
-
-.-right-2 {
-  right: -0.5rem;
-}
-.text-15 {
-  font-size: 0.9375rem;
-  line-height: 1.6;
-}
-
-.rounded {
-  border-radius: 0.25rem;
-}
-.w-48 {
-  width: 12rem;
-}
-.bg-white {
-  background-color: rgb(24, 26, 27);
-}
-
-.z-40 {
-  z-index: 40;
-}
-.h5 {
-  color: rgb(163, 211, 131);
-}
-.p-4 {
-  padding: 1rem;
-}
-
-.h5 {
-  font-size: 0.75rem;
-  line-height: 1.6;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.py-2 {
-  padding-top: 0.2rem;
-  padding-bottom: 0.2rem;
-}
-
-.border-y {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
-ul {
-  list-style-image: initial;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#p-1 {
-  display: flex;
-  align-items: center;
-  background-color: #a8ab03;
-  padding: 0;
-  margin-top: 17px;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  
-}
-
-.icon-text img {
-  margin-right: 0.5rem;
-}
-a.icon-text {
-  font-weight:  600;
-}
-.icon-text a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.icon-text a:hover {
-  color: inherit;
-}
-.icon-text {
-  display: inline-flex;
-
-}
 .section-lead {
   font-size: 20px;
   line-height: 1.5;
@@ -298,14 +195,6 @@ a.icon-text {
   margin-bottom: 32px;
 }
 
-a,
-button {
-  transition-duration: 0.2s;
-}
-a {
-  color: blue;
-  text-decoration: inherit;
-}
 .text-center {
   text-align: center !important;
 
@@ -323,4 +212,15 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@keyframes fadeUp {
+	0% {
+		transform: translate(0, 60%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
 }

@@ -1,16 +1,22 @@
 .crm-table-container {
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.crm-table-content {
   height: 10rem;
   padding: 8px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #d9d9d9;
+  margin-top: 7%;
 }
-
 .crm-table {
   width: 100%;
+  min-width: 90rem;
   border-collapse: collapse;
   background-color: #ffffff;
+
 }
 
 .crm-table th, .crm-table td {
@@ -25,7 +31,7 @@
 }
 
 .crm-actions {
-  margin: 20px;
+  margin-top: 50px;
   display: flex;
   gap: 10px;
 }
@@ -40,6 +46,12 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+.crm-button:hover {
+  background-color: #555;
+  color: #fff; 
 }
 
 .add-button {

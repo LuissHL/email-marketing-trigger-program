@@ -8,10 +8,13 @@
 </head>
 <body>
     <!-- profile.html -->
-{% extends "inicio.html" %}
+{% include "navbar.html" %}
 
 {% block content %}
-<h1 class="title-name">Welcome {{ name }}</h1>
+<div class="welcome">
+    <h1 class="title-name">Welcome {{ name }}</h1>
+
+</div>
 {% endblock %}
 </body>
 </html>

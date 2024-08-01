@@ -11,57 +11,6 @@ body {
   font-size: 13px;
   line-height: 1.42857;
 }
-
-.d-flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-#navBar-left {
-  margin-left: 2rem;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: #66b1f2;
-  justify-content: space-between;
-}
-
-.emailIcon {
-  width: 70px;
-  height: 70px;
-}
-
-.projectName {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-#navList {
-  gap: 20%;
-  margin-right: 40px;
-  padding-right: 1rem;
-}
-
-#btn-seeNotify {
-  padding: 5px;
-  border-radius: 50%;
-  border: none;
-  background-color: #66b1f2;
-  cursor: pointer;
-}
-
-.btn-perfil {
-  background: none;
-  border-radius: 50%;
-  width: 43px;
-  height: 42px;
-  cursor: pointer;
-}
-
 .form-group {
   display: flex;
   align-items: center;
@@ -69,18 +18,12 @@ body {
   margin-bottom: 15px;
 }
 
-.form-control {
-  color: rgb(240, 232, 219);
-  background-color: rgb(32, 35, 36);
-  border-color: rgb(84, 92, 95);
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px inset;
-}
-
 .partEntrar {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 4rem;
+  margin-top: 8%;
+  width: 100%;
+  max-width: 35rem;
+  padding: 20px;
 }
 
 .page-header {
@@ -92,21 +35,15 @@ body {
   width: 100%;
   height: 38px;
   font-size: 13px;
-  line-height: 1.42857;
-  color: rgb(85, 85, 85);
-  background-color: rgb(255, 255, 255);
   padding: 8px 12px;
   border-width: 1px;
   border-style: solid;
-  border-image: initial;
   border-radius: 4px;
   transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 
 .bodyContent {
-  margin-left: 20px;
-  width: 100%;
-  max-width: 46rem;
+  display: flex;
 }
 
 h1 {
@@ -128,10 +65,7 @@ h1 {
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.428571429;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
   cursor: pointer;
   border-radius: 4px;
   user-select: none;
@@ -150,13 +84,13 @@ h1 {
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.1);
 }
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+.btn-default:hover, .btn-default:focus, .btn-default:active,  .dropdown-toggle.btn-default {
   color: #2669c3;
   background-color: #d9f1ff;
   border-color: #2669c3;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .dropdown-toggle.btn-primary {
   color: #fff;
   background-color: #427dd7;
   border-color: #2669c3;
@@ -174,16 +108,12 @@ h1 {
 
 /* Estilo específico para notificações de erro */
 .notification.is-danger {
-    color: #a94442; /* Cor do texto do erro */
-    background-color: #f2dede; /* Cor de fundo do erro */
-    border-color: #ebccd1; /* Cor da borda do erro */
+    color: #a94442; 
+    background-color: #f2dede; 
+    border-color: #ebccd1; 
 }
 
 .notification.is-danger a {
-    color: #a94442; /* Cor do link dentro da notificação */
+    color: #a94442; 
     text-decoration: underline;
-}
-
-.notification.is-danger a:hover {
-    color: #843534; /* Cor do link quando o mouse passa por cima */
 }

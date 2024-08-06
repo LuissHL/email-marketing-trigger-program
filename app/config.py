@@ -19,4 +19,5 @@ class Config:
     CORS_HEADERS = "Access-Control-Allow-Origin"
     JSON_SORT_KEYS = False
     SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
     SERVERS = [{"name": "Dev Server", "url": "http://127.0.0.1:5000"}]

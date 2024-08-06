@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask import render_template, jsonify
 from app.db import db, migrations
 from .config import APP_CONFIGS, Config
+from app.api.controllers.auth import auth_bp
 
 
 LOCAL_URL = "http://127.0.0.1:5000"
@@ -26,6 +27,10 @@ def create_app():
     def home():
         """Retorna uma mensagem simples para confirmar que a aplicação está funcionando"""
         return jsonify(message="API is running")
+    
+    # API
+    # Auth
+    app.register_blueprint(auth_bp)
 
     with app.app_context():
         db.init_app(app)

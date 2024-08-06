@@ -2,27 +2,33 @@ from flask import Blueprint
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 
-main = Blueprint('main', __name__)
+main = Blueprint("main", __name__)
 
-@main.route('/')
+
+@main.route("/")
 def inicio():
     if current_user.is_authenticated:
-        return render_template('inicio.html', name=current_user.username)
+        return render_template("inicio.html", name=current_user.username)
     else:
-        return render_template('inicio.html', name="Convidado")
-@main.route('/profile')
+        return render_template("inicio.html", name="Convidado")
+
+
+@main.route("/profile")
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.username)
+    return render_template("profile.html", name=current_user.username)
 
-@main.route('/email')
+
+@main.route("/email")
 def email():
-    return render_template('emailEditor.html', name= current_user.username)
-#criação inicial colocar autenticação
-@main.route('/agendamento')
+    return render_template("emailEditor.html", name=current_user.username)
+
+
+# criação inicial colocar autenticação
+@main.route("/agendamento")
 @login_required
 def agendamento():
-    return render_template('scheduled.html',name= current_user.username)
+    return render_template("scheduled.html", name=current_user.username)
 
 
 """

@@ -1,84 +1,102 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app
+from flask import (
+    Blueprint,
+    render_template,
+    redirect,
+    url_for,
+    request,
+    flash,
+    current_app,
+)
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from .models import User
 from server.api.ListaDeContatos.db_connector import DatabaseConnection
 
 
-auth = Blueprint('auth', __name__)
+auth = Blueprint("auth", __name__)
 
-@auth.route('/login')
+
+@auth.route("/login")
 def login():
-    return render_template('login.html', name="Convidado")
+    return render_template("login.html", name="Convidado")
 
-@auth.route('/signup')
+
+@auth.route("/signup")
 def signup():
-    return render_template('signup.html',  name="Convidado")
+    return render_template("signup.html", name="Convidado")
 
 
-@auth.route('/signup', methods=['POST'])
+@auth.route("/signup", methods=["POST"])
 def sighup_post():
-    email = request.form.get('email')
-    username = request.form.get('username')
-    password = request.form.get('password')
+    email = request.form.get("email")
+    username = request.form.get("username")
+    password = request.form.get("password")
 
-    config = current_app.config['DATABASE_CONFIG']
+    config = current_app.config["DATABASE_CONFIG"]
 
     with DatabaseConnection(config) as connection:
         cursor = connection.cursor()
         cursor.execute("SELECT id FROM users WHERE email = %s", (email,))
-        user = cursor.fetchone() # if this returns a user, then the email already exists in database
+        user = (
+            cursor.fetchone()
+        )  # if this returns a user, then the email already exists in database
 
-    if user: # if a user is found, we want to redirect back to signup page so user can try again
-      flash('Email address already exists')
-      return redirect(url_for('auth.signup')) 
+    if (
+        user
+    ):  # if a user is found, we want to redirect back to signup page so user can try again
+        flash("Email address already exists")
+        return redirect(url_for("auth.signup"))
 
-     # cria um novo usuário com os dados do formulário. Hash a senha para que a versão em texto simples não seja salva.
-    hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+    # cria um novo usuário com os dados do formulário. Hash a senha para que a versão em texto simples não seja salva.
+    hashed_password = generate_password_hash(password, method="pbkdf2:sha256")
     with DatabaseConnection(config) as connection:
         cursor = connection.cursor()
-        cursor.execute("INSERT INTO users (username, email, password) VALUES (%s, %s, %s)", (username, email, hashed_password))
+        cursor.execute(
+            "INSERT INTO users (username, email, password) VALUES (%s, %s, %s)",
+            (username, email, hashed_password),
+        )
         connection.commit()
-        flash('User successfully created!')
+        flash("User successfully created!")
 
-    return redirect(url_for('auth.login'))
+    return redirect(url_for("auth.login"))
 
 
-@auth.route('/login', methods=['POST'])
+@auth.route("/login", methods=["POST"])
 def login_post():
-    email = request.form.get('email')
-    password = request.form.get('password')
-    remember = True if request.form.get('remember') else False
+    email = request.form.get("email")
+    password = request.form.get("password")
+    remember = True if request.form.get("remember") else False
 
-    config = current_app.config['DATABASE_CONFIG']
+    config = current_app.config["DATABASE_CONFIG"]
 
     with DatabaseConnection(config) as connection:
         cursor = connection.cursor()
-        cursor.execute("SELECT id, username, email, password FROM users WHERE email = %s", (email,))
+        cursor.execute(
+            "SELECT id, username, email, password FROM users WHERE email = %s", (email,)
+        )
         user = cursor.fetchone()
 
-    # verifica se o usuário realmente existe
+        # verifica se o usuário realmente existe
         # pega a senha fornecida pelo usuário, faz o hash e compara com a senha hash no banco de dados
         if not user or not check_password_hash(user[3], password):
-            flash('Please check your login details and try again.')
-            return redirect(url_for('auth.login'))  # se o usuário não existir ou a senha estiver errada, recarregue a página
-
+            flash("Please check your login details and try again.")
+            return redirect(
+                url_for("auth.login")
+            )  # se o usuário não existir ou a senha estiver errada, recarregue a página
 
     # se não passa no if, sabemos que o usuario está com as credenciais certass
     # Aqui passamos os atributos explicitamente para o construtor do User
-    user_obj = User(id=user[0],  username=user[1],email=user[2], password=user[3])
+    user_obj = User(id=user[0], username=user[1], email=user[2], password=user[3])
     login_user(user_obj, remember=remember)
 
-    return redirect(url_for('main.profile'))
+    return redirect(url_for("main.profile"))
 
 
-@auth.route('/logout')
+@auth.route("/logout")
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('main.inicio'))
-
-
+    return redirect(url_for("main.inicio"))
 
 
 """
@@ -148,5 +166,4 @@ def token_required(f):
         return f(authenticated_user, *args, **kwargs)
     return decorated
 
-"""      
-
+"""

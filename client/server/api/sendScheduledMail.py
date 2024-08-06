@@ -3,16 +3,17 @@ import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from mailEditor import getTime,getRecipients,getBody,getSubject,getSegment
+from mailEditor import getTime, getRecipients, getBody, getSubject, getSegment
 
-#agendamento em UTC
+# agendamento em UTC
 scheduled = getTime()
-send_time = dt.datetime(scheduled[0], scheduled[1], scheduled[2], scheduled[3], scheduled[4], scheduled[5]) # set your sending time in UTC
+send_time = dt.datetime(
+    scheduled[0], scheduled[1], scheduled[2], scheduled[3], scheduled[4], scheduled[5]
+)  # set your sending time in UTC
 try:
     time.sleep(send_time.timestamp() - time.time())
 except:
     print("resuming sending")
-
 
 
 server_smtp = "smtp.gmail.com"
@@ -21,10 +22,10 @@ sender_email = "luiszzsoul@gmail.com"
 password = "tfus diwe mdej rioe"
 # precisa remover essa senha Daqui e colocar em um arquivo separado por questão de segurança
 
-#mensagem do email
+# mensagem do email
 receive_email = getRecipients()
 subject = f"{getSubject()} test at {dt.datetime.now()} UTC"
-body = '''
+body = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,7 @@ body = '''
     </table>
 </body>
 </html>
-'''
+"""
 
 message = MIMEMultipart()
 message["From"] = sender_email
@@ -62,15 +63,13 @@ message["Subject"] = subject
 message.attach(MIMEText(body, "html"))
 
 try:
- server = smtplib.SMTP(server_smtp, port)
- server.starttls()
+    server = smtplib.SMTP(server_smtp, port)
+    server.starttls()
 
- server.login(sender_email, password)
- server.sendmail(sender_email, receive_email, message.as_string())
- print("E-mail enviado com sucesso")
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receive_email, message.as_string())
+    print("E-mail enviado com sucesso")
 except Exception as e:
- print(f"Houve algum erro: {e}")
+    print(f"Houve algum erro: {e}")
 finally:
- server.quit()
-
-
+    server.quit()
